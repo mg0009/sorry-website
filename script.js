@@ -32,7 +32,7 @@ const memories = [
   {
     title: "Still My Favorite",
     date: "Date · Jun 30",
-    location: "Location · My Heart",
+    location: "Location · My Heart❤️",
     image: "assets/photos/photo-6.jpg",
   },
 ];
