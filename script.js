@@ -26,7 +26,7 @@ const memories = [
   {
     title: "The Quiet Photo",
     date: "Date · April 16",
-    location: "Location · Hotel Bed",
+    location: "Location · Hotel Bedroom",
     image: "assets/photos/photo-5.jpg",
   },
   {
