@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A premium interactive apology story with music, memories, promises, and a hopeful new beginning."
+    />
+    <title>I'm Sorry</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <audio
+      id="backgroundMusic"
+      loop
+      preload="none"
+      src="assets/music/background-music.mp3"
+    ></audio>
+
+    <div class="ambient" aria-hidden="true">
+      <div class="aurora aurora-one"></div>
+      <div class="aurora aurora-two"></div>
+      <div class="particle-field"></div>
+      <div class="heart-field"></div>
+    </div>
+
+    <button class="music-control hidden" id="musicToggle" type="button" aria-label="Toggle music">
+      <span id="musicIcon">♪</span>
+    </button>
+
+    <main>
+      <section class="hero section" id="hero">
+        <div class="hero-content reveal">
+          <p>You probably don't want to read this...</p>
+          <p>But if you can spare just two minutes,</p>
+          <p>I'd like to say something.</p>
+          <button class="heart-button" id="openHeart" type="button">Open My Heart <span>♥</span></button>
+        </div>
+      </section>
+
+      <section class="letter-section section" id="letter">
+        <div class="section-heading reveal">
+          <span>A quiet note</span>
+          <h1>For You</h1>
+        </div>
+        <div class="envelope-stage reveal">
+          <button class="envelope" id="envelope" type="button" aria-label="Open the letter">
+            <span class="env-back"></span>
+            <span class="env-paper"></span>
+            <span class="env-front"></span>
+            <span class="env-flap"></span>
+            <span class="env-seal">♥</span>
+          </button>
+          <article class="letter glass hidden" id="letterCard">
+            <p id="typedLetter"></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="memories section" id="memories">
+        <div class="section-heading reveal">
+          <span>Little pieces of us</span>
+          <h2>Memory Gallery</h2>
+        </div>
+        <div class="gallery-grid" id="galleryGrid"></div>
+      </section>
+
+      <section class="timeline-section section" id="timeline">
+        <div class="section-heading reveal">
+          <span>How the story softened me</span>
+          <h2>Our Timeline</h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item reveal"><span>01</span><h3>We Met</h3><p>A simple moment that became the start of something I still cherish.</p></article>
+          <article class="timeline-item reveal"><span>02</span><h3>First Conversation</h3><p>I remember how easy it felt to keep talking, even about tiny things.</p></article>
+          <article class="timeline-item reveal"><span>03</span><h3>First Laugh</h3><p>That laugh stayed with me. It made the world feel lighter.</p></article>
+          <article class="timeline-item reveal"><span>04</span><h3>Favorite Memory</h3><p>A quiet, ordinary day that somehow became unforgettable.</p></article>
+          <article class="timeline-item reveal"><span>05</span><h3>Today</h3><p>I am here, taking responsibility, hoping we can begin again gently.</p></article>
+        </div>
+      </section>
+
+      <section class="special section" id="special">
+        <div class="section-heading reveal">
+          <span>What I never want to take for granted</span>
+          <h2>Why You're Special</h2>
+        </div>
+        <div class="card-grid">
+          <article class="reason-card reveal"><h3>Your Smile</h3><p>It changes the whole room without even trying.</p></article>
+          <article class="reason-card reveal"><h3>Your Kindness</h3><p>You make people feel seen in the smallest ways.</p></article>
+          <article class="reason-card reveal"><h3>Your Voice</h3><p>It has a calm I miss more than I say.</p></article>
+          <article class="reason-card reveal"><h3>Your Support</h3><p>You believed in me when I forgot how to.</p></article>
+          <article class="reason-card reveal"><h3>Your Heart</h3><p>It is rare, generous, and deeply worth protecting.</p></article>
+          <article class="reason-card reveal"><h3>Everything About You</h3><p>The little details are exactly what make you unforgettable.</p></article>
+        </div>
+      </section>
+
+      <section class="promises section" id="promises">
+        <div class="section-heading reveal">
+          <span>Not just words</span>
+          <h2>My Promises</h2>
+        </div>
+        <div class="promise-list">
+          <article class="promise reveal"><span>✓</span><p>I'll communicate better, even when the conversation is hard.</p></article>
+          <article class="promise reveal"><span>✓</span><p>I'll understand you more before trying to be understood.</p></article>
+          <article class="promise reveal"><span>✓</span><p>I'll respect your feelings and never make them feel small.</p></article>
+          <article class="promise reveal"><span>✓</span><p>I'll keep trying every day, with patience and honesty.</p></article>
+        </div>
+      </section>
+
+      <section class="question section" id="question">
+        <div class="question-panel glass reveal">
+          <h2>Can we start again?</h2>
+          <div class="answer-row">
+            <button class="yes-button" id="yesButton" type="button">YES <span>♥</span></button>
+            <button class="no-button" id="noButton" type="button">NOT YET</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="music-modal hidden" id="musicModal" role="dialog" aria-modal="true" aria-labelledby="musicTitle">
+      <div class="modal-card glass">
+        <h2 id="musicTitle">Would you like to play some background music?</h2>
+        <div class="modal-actions">
+          <button id="musicYes" type="button">Yes ♥</button>
+          <button id="musicNo" type="button">No</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="lightbox hidden" id="lightbox" role="dialog" aria-modal="true" aria-label="Memory preview">
+      <button class="lightbox-close" id="closeLightbox" type="button" aria-label="Close preview">×</button>
+      <img id="lightboxImage" alt="" />
+      <div class="lightbox-copy">
+        <strong id="lightboxTitle"></strong>
+        <span id="lightboxMeta"></span>
+      </div>
+    </div>
+
+    <div class="finale hidden" id="finale" aria-live="polite">
+      <canvas id="confettiCanvas"></canvas>
+      <div class="finale-message glass">
+        <div class="beating-heart">♥</div>
+        <h2>Thank you for giving us another chance.</h2>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

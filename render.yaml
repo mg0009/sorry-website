@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: premium-apology-site
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: .
